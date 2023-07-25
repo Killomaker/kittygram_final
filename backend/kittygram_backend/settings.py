@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("SECRET_KEY", 'default_key')
 
-DEBUG = False
+DEBUG = os.getenv('DEBUG', default='False').lower() == 'true'
 
 ALLOWED_HOSTS = ['51.250.100.23', '127.0.0.1', 'localhost', 'kittyhost.ddns.net']
 
