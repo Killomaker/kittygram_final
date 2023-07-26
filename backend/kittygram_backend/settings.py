@@ -8,12 +8,11 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv("SECRET_KEY", 'default_key')
+SECRET_KEY = os.getenv('SECRET_KEY', 'default_key')
 
 DEBUG = os.getenv('DEBUG', default='False').lower() == 'true'
 
-ALLOWED_HOSTS = ['51.250.100.23', '127.0.0.1', 'localhost', 'kittyhost.ddns.net']
-#ALLOWED_HOSTS = str(os.getenv("ALLOWED_HOSTS")).split(',') если так, то не открывается ни одна страница проекта
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'kittyhost.ddns.net').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
